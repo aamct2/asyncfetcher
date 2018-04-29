@@ -3,7 +3,7 @@ language: generic
 matrix:
   include:
     - script:
-        - fastlane test-iOS
+        - fastlane test_iOS
       env: JOB=Xcode-iOS
       os: osx
       osx_image: xcode9.3
@@ -12,7 +12,7 @@ matrix:
         - rvm install $(cat .ruby-version)
         - make dependencies
     - script:
-        - fastlane test-macOS
+        - fastlane test_macOS
       env: JOB=Xcode-macOS
       os: osx
       osx_image: xcode9.3
@@ -21,7 +21,7 @@ matrix:
         - rvm install $(cat .ruby-version)
         - make dependencies
     - script:
-        - fastlane test-tvOS
+        - fastlane test_tvOS
       env: JOB=Xcode-tvOS
       os: osx
       osx_image: xcode9.3
