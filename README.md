@@ -10,7 +10,7 @@ A generic framework for asynchronously fetching and caching data.
 ## Features
 
 * [x] Asynchronously fetch data and automatically store in a cache
-* [x] Support iOS, Linux, macOS, tvOS, watchOS
+* [x] Support iOS 8.0+, Linux, macOS 10.10+, tvOS 9.0+, watchOS 2.0+
 
 ## Install
 
