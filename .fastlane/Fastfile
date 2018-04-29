@@ -26,6 +26,11 @@ lane :test_watchOS do
     sh "set -o pipefail && xcodebuild -workspace ./../AsyncFetcher.xcworkspace -scheme 'AsyncFetcher (watchOS)' | xcpretty"
 end
 
+desc "Updates the GitHub Pages documentation"
+lane :update_docs do
+    jazzy
+end
+
 desc "Upload code coverage reports (if running on CI)"
 lane :upload_cov do
     if is_ci?

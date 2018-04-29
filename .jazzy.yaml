@@ -1,0 +1,6 @@
+author: Aaron McTavish
+github_url: https://github.com/aamct2/asyncfetcher
+module: AsyncFetcher
+output: docs
+theme: fullwidth
+xcodebuild_arguments: [-workspace,'AsyncFetcher.xcworkspace',-scheme,'AsyncFetcher (iOS)']

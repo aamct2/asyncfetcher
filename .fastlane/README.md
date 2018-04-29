@@ -35,6 +35,11 @@ Run tests for tvOS
 fastlane test_watchOS
 ```
 Run tests for watchOS
+### update_docs
+```
+fastlane update_docs
+```
+Updates the GitHub Pages documentation
 ### upload_cov
 ```
 fastlane upload_cov

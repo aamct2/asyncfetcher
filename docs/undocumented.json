@@ -1,0 +1,54 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/Aaron/Documents/App-Projects/AsyncFetcher/Sources/AsyncFetcher/AsyncFetcher.swift",
+      "line": 11,
+      "symbol": "AsyncFetcher",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Aaron/Documents/App-Projects/AsyncFetcher/Sources/AsyncFetcher/AsyncFetcher.swift",
+      "line": 32,
+      "symbol": "AsyncFetcher.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Aaron/Documents/App-Projects/AsyncFetcher/Sources/AsyncFetcher/AsyncFetcherOperation.swift",
+      "line": 11,
+      "symbol": "AsyncFetcherOperationInput",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Aaron/Documents/App-Projects/AsyncFetcher/Sources/AsyncFetcher/AsyncFetcherOperation.swift",
+      "line": 12,
+      "symbol": "AsyncFetcherOperationInput.IdentifierType",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Aaron/Documents/App-Projects/AsyncFetcher/Sources/AsyncFetcher/AsyncFetcherOperation.swift",
+      "line": 18,
+      "symbol": "AsyncFetcherOperation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Aaron/Documents/App-Projects/AsyncFetcher/Sources/AsyncFetcher/AsyncFetcherOperation.swift",
+      "line": 31,
+      "symbol": "AsyncFetcherOperation.init(input:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Aaron/Documents/App-Projects/AsyncFetcher/Sources/AsyncFetcher/AsyncFetcherOperation.swift",
+      "line": 35,
+      "symbol": "AsyncFetcherOperation.isAsynchronous",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/Aaron/Documents/App-Projects/AsyncFetcher"
+}
