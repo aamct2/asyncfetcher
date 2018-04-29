@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+/// Generic class to asynchronously fetch and cache data.
 public final class AsyncFetcher<Input: AsyncFetcherOperationInput,
                                 Output: AnyObject,
                                 FetchOperation: AsyncFetcherOperation<Input, Output>> {
@@ -54,9 +56,9 @@ public final class AsyncFetcher<Input: AsyncFetcherOperationInput,
     }
 
     /**
-     Returns the previously fetched data for a specified `UUID`.
+     Returns the previously fetched data for a specified unique identifier.
 
-     - Parameter identifier: The `UUID` of the object to return.
+     - Parameter identifier: The unique identifier of the object to return.
      - Returns: The 'DisplayData' that has previously been fetched or nil.
      */
     public func fetchedData(for identifier: Input.IdentifierType) -> Output? {
@@ -64,10 +66,10 @@ public final class AsyncFetcher<Input: AsyncFetcherOperationInput,
     }
 
     /**
-     Cancels any enqueued asychronous fetches for a specified `UUID`. Completion
+     Cancels any enqueued asychronous fetches for a specified unique identifer. Completion
      handlers are not called if a fetch is canceled.
 
-     - Parameter identifier: The `UUID` to cancel fetches for.
+     - Parameter identifier: The unique identifier to cancel fetches for.
      */
     public func cancelFetch(_ identifier: Input.IdentifierType) {
         serialAccessQueue.addOperation {
@@ -87,7 +89,7 @@ public final class AsyncFetcher<Input: AsyncFetcherOperationInput,
      Begins fetching data for the provided `identifier` invoking the associated
      completion handler when complete.
 
-     - Parameter identifier: The `UUID` to fetch data for.
+     - Parameter identifier: The unique identifier to fetch data for.
      */
     private func fetchData(for input: Input) {
         // If a request has already been made for the object, do nothing more.
@@ -119,9 +121,9 @@ public final class AsyncFetcher<Input: AsyncFetcherOperationInput,
     }
 
     /**
-     Returns any enqueued `ObjectFetcherOperation` for a specified `UUID`.
+     Returns any enqueued `ObjectFetcherOperation` for a specified unique identifier.
 
-     - Parameter identifier: The `UUID` of the operation to return.
+     - Parameter identifier: The unique identifier of the operation to return.
      - Returns: The enqueued `ObjectFetcherOperation` or nil.
      */
     private func operation(for identifier: Input.IdentifierType) -> FetchOperation? {
@@ -134,11 +136,11 @@ public final class AsyncFetcher<Input: AsyncFetcherOperationInput,
     }
 
     /**
-     Invokes any completion handlers for a specified `UUID`. Once called,
-     the stored array of completion handlers for the `UUID` is cleared.
+     Invokes any completion handlers for a specified unique identifier. Once called,
+     the stored array of completion handlers for the unique identifier is cleared.
 
      - Parameters:
-     - identifier: The `UUID` of the completion handlers to call.
+     - identifier: The unique identifier of the completion handlers to call.
      - object: The fetched object to pass when calling a completion handler.
      */
     private func invokeCompletionHandlers(for identifier: Input.IdentifierType,

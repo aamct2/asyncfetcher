@@ -15,6 +15,7 @@ public protocol AsyncFetcherOperationInput {
     var identifier: IdentifierType { get }
 }
 
+/// Asynchronous fetch operation to be used in conjunction with `AsyncFetcher`.
 open class AsyncFetcherOperation<Input: AsyncFetcherOperationInput, Output: AnyObject>: Operation {
 
     // MARK: - Properties
