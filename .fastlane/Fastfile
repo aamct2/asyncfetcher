@@ -3,6 +3,9 @@ lane :test_iOS do
     verify(
         scheme: "AsyncFetcher (iOS)"
     )
+    verify(
+        scheme: "iOS Example"
+    )
 end
 
 desc "Run tests for macOS"

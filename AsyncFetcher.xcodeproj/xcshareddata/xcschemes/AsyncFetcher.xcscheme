@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9352161F2095A4580092A740"
-               BuildableName = "libAsyncFetcher (macOS).a"
+               BuildableName = "libAsyncFetcher.a"
                BlueprintName = "AsyncFetcher (macOS)"
                ReferencedContainer = "container:AsyncFetcher.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9352161F2095A4580092A740"
-            BuildableName = "libAsyncFetcher (macOS).a"
+            BuildableName = "libAsyncFetcher.a"
             BlueprintName = "AsyncFetcher (macOS)"
             ReferencedContainer = "container:AsyncFetcher.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9352161F2095A4580092A740"
-            BuildableName = "libAsyncFetcher (macOS).a"
+            BuildableName = "libAsyncFetcher.a"
             BlueprintName = "AsyncFetcher (macOS)"
             ReferencedContainer = "container:AsyncFetcher.xcodeproj">
          </BuildableReference>
