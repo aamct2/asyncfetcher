@@ -9,6 +9,7 @@ A generic framework for asynchronously fetching and caching data.
 
 ## Features
 
+* [x] Asynchronously fetch data and automatically store in a cache
 * [x] Support iOS, Linux, macOS, tvOS, watchOS
 
 ## Install
@@ -42,8 +43,6 @@ pod install
 ## Maintainers
 
 * Aaron McTavish (@aamct2)
-
-### Unit tests
 
 ## License
 
