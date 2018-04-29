@@ -1,3 +1,8 @@
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/aamct2/asyncfetcher/blob/master/LICENSE.md)
+[![Build Status](https://travis-ci.org/aamct2/asyncfetcher.svg?branch=master)](https://travis-ci.org/aamct2/asyncfetcher)
+[![codecov.io](https://codecov.io/github/aamct2/asyncfetcher/coverage.svg?branch=master)](https://codecov.io/github/aamct2/asyncfetcher?branch=master)
+![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg)
+
 # AsyncFetcher
 
 A generic framework for asynchronously fetching and caching data.
