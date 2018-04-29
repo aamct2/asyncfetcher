@@ -19,17 +19,22 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane test_iOS
 ```
-
+Run tests for iOS
 ### test_macOS
 ```
 fastlane test_macOS
 ```
-
+Run tests for macOS
 ### test_tvOS
 ```
 fastlane test_tvOS
 ```
-
+Run tests for tvOS
+### test_watchOS
+```
+fastlane test_watchOS
+```
+Run tests for watchOS
 ### upload_cov
 ```
 fastlane upload_cov

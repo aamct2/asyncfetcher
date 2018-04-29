@@ -1,19 +1,29 @@
+desc "Run tests for iOS"
 lane :test_iOS do
     verify(
         scheme: "AsyncFetcher (iOS)"
     )
 end
 
+desc "Run tests for macOS"
 lane :test_macOS do
     verify(
         scheme: "AsyncFetcher (macOS)"
     )
 end
 
+desc "Run tests for tvOS"
 lane :test_tvOS do
     verify(
         scheme: "AsyncFetcher (tvOS)"
     )
+end
+
+desc "Run tests for watchOS"
+lane :test_watchOS do
+    # Since we cannot build unit tests for watchOS, verify building
+    #  the framework instead.
+    sh "set -o pipefail && xcodebuild -workspace ./../AsyncFetcher.xcworkspace -scheme 'AsyncFetcher (watchOS)' | xcpretty"
 end
 
 desc "Upload code coverage reports (if running on CI)"
