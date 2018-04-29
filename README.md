@@ -40,6 +40,8 @@ pod install
 
 ## Usage
 
+* [iOS Example](<./iOS\ Example>)
+
 ## Maintainers
 
 * Aaron McTavish (@aamct2)
