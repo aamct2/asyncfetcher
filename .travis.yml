@@ -10,7 +10,7 @@ matrix:
       before_install:
         - rvm list
         - rvm install $(cat .ruby-version)
-        - bundle install
+        - make dependencies
     - script:
         - fastlane test-macOS
       env: JOB=Xcode-macOS
@@ -19,7 +19,7 @@ matrix:
       before_install:
         - rvm list
         - rvm install $(cat .ruby-version)
-        - bundle install
+        - make dependencies
     - script:
         - fastlane test-tvOS
       env: JOB=Xcode-tvOS
@@ -28,7 +28,7 @@ matrix:
       before_install:
         - rvm list
         - rvm install $(cat .ruby-version)
-        - bundle install
+        - make dependencies
     - script:
         - swift test
       env: JOB=SwiftPM
