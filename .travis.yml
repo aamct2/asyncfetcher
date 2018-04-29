@@ -1,0 +1,44 @@
+language: generic
+
+matrix:
+  include:
+    - script:
+        - fastlane test-iOS
+      env: JOB=Xcode-iOS
+      os: osx
+      osx_image: xcode9.3
+      before_install:
+        - rvm list
+        - rvm install $(cat .ruby-version)
+    - script:
+        - fastlane test-macOS
+      env: JOB=Xcode-macOS
+      os: osx
+      osx_image: xcode9.3
+      before_install:
+        - rvm list
+        - rvm install $(cat .ruby-version)
+    - script:
+        - fastlane test-tvOS
+      env: JOB=Xcode-tvOS
+      os: osx
+      osx_image: xcode9.3
+      before_install:
+        - rvm list
+        - rvm install $(cat .ruby-version)
+    - script:
+        - swift test
+      env: JOB=SwiftPM
+      os: osx
+      osx_image: xcode9.3
+      before_install:
+        - rvm list
+        - rvm install $(cat .ruby-version)
+    - script:
+        - make test-docker
+      env: JOB=Linux
+      sudo: required
+      services: docker
+      before_install:
+        - make build-docker
+        - docker ps -a

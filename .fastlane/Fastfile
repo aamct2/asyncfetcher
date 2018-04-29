@@ -1,0 +1,51 @@
+lane :test_iOS do
+    verify(
+        scheme: "AsyncFetcher (iOS)"
+    )
+end
+
+lane :test_macOS do
+    verify(
+        scheme: "AsyncFetcher (macOS)"
+    )
+end
+
+lane :test_tvOS do
+    verify(
+        scheme: "AsyncFetcher (tvOS)"
+    )
+end
+
+desc "Upload code coverage reports (if running on CI)"
+lane :upload_cov do
+    if is_ci?
+        sh "bash ./../Scripts/codecov.sh"
+    else
+        say "No need to upload code coverage. Not running from CI."
+    end
+end
+
+desc "Runs tests"
+private_lane :verify do |options|
+    scheme = options[:scheme]
+    destination = options[:destination]
+    sdk = options[:sdk]
+    output_directory = ".fastlane/test_output/" + scheme + "/"
+    opts = {
+        :workspace => 'AsyncFetcher.xcworkspace',
+        :scheme => scheme,
+        :destination => destination,
+        :sdk => sdk,
+        :code_coverage => true,
+        :xcargs => "ONLY_ACTIVE_ARCH=YES",
+        :output_directory => output_directory,
+        :clean => true
+    }
+    scan(opts)
+    upload_cov
+end
+
+desc "Runs unit tests using Swift Package Manager"
+lane :verify_swiftpm do
+    sh("swift test")
+end
