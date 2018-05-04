@@ -1,4 +1,4 @@
 coverage:
   ignore:
-    - iOS\ Example/.*
+    - iOS\ Example/**/.*
     - Tests/**/.*

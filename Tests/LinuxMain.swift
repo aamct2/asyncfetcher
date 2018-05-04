@@ -10,5 +10,6 @@
 import XCTest
 
 XCTMain([
-    testCase(AsyncFetcherTests.allTests)
+    testCase(AsyncFetcherTests.allTests),
+    testCase(AsyncFetcherOperationTests.allTests)
 ])

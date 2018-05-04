@@ -22,18 +22,20 @@ class AsyncFetcherTests: XCTestCase {
     // MARK: - Tests
 
     func testCompletionHandlerCallback() {
+        // Given
         let fetcher = AsyncFetcher<OperationInputMock,
                                    OperationOutputMock,
                                    OperationMock>()
 
         let input = OperationInputMock()
 
+        // When
         let completionExpectation = expectation(description: "CompletionExpectation")
-
         fetcher.fetchAsync(input) { _ in
             completionExpectation.fulfill()
         }
 
+        // Then
         #if os(Linux)
             waitForExpectations(timeout: 5, handler: nil)
         #else

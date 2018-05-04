@@ -14,6 +14,12 @@ final class OperationInputMock: AsyncFetcherOperationInput {
     var identifier = NSUUID()
 }
 
+extension OperationInputMock: Equatable {
+    static func == (lhs: OperationInputMock, rhs: OperationInputMock) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+}
+
 final class OperationOutputMock {
 
 }
