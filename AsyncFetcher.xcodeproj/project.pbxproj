@@ -21,6 +21,9 @@
 		935216342095A4A10092A740 /* libAsyncFetcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935216202095A4580092A740 /* libAsyncFetcher.a */; };
 		9352163A2095A4D90092A740 /* AsyncFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936667F32094405D00933CE1 /* AsyncFetcherTests.swift */; };
 		936667F52094405D00933CE1 /* AsyncFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936667F32094405D00933CE1 /* AsyncFetcherTests.swift */; };
+		938E063820983015001F7AF1 /* OperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E063720983015001F7AF1 /* OperationMock.swift */; };
+		938E063920983015001F7AF1 /* OperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E063720983015001F7AF1 /* OperationMock.swift */; };
+		938E063B20983015001F7AF1 /* OperationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E063720983015001F7AF1 /* OperationMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,7 @@
 		9352162F2095A4A10092A740 /* AsyncFetcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncFetcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		936667F32094405D00933CE1 /* AsyncFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncFetcherTests.swift; sourceTree = "<group>"; };
 		936667F42094405D00933CE1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		938E063720983015001F7AF1 /* OperationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,9 +203,18 @@
 		936667F22094405D00933CE1 /* AsyncFetcherTests */ = {
 			isa = PBXGroup;
 			children = (
+				938E063620982FFE001F7AF1 /* Mocks */,
 				936667F32094405D00933CE1 /* AsyncFetcherTests.swift */,
 			);
 			path = AsyncFetcherTests;
+			sourceTree = "<group>";
+		};
+		938E063620982FFE001F7AF1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				938E063720983015001F7AF1 /* OperationMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936667F52094405D00933CE1 /* AsyncFetcherTests.swift in Sources */,
+				938E063820983015001F7AF1 /* OperationMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9352161B2095A3EB0092A740 /* AsyncFetcherTests.swift in Sources */,
+				938E063920983015001F7AF1 /* OperationMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9352163A2095A4D90092A740 /* AsyncFetcherTests.swift in Sources */,
+				938E063B20983015001F7AF1 /* OperationMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

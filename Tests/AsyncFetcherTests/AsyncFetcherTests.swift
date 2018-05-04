@@ -6,35 +6,43 @@
 //  Copyright © 2018 Aaron McTavish. All rights reserved.
 //
 
+@testable import AsyncFetcher
 import XCTest
 
 class AsyncFetcherTests: XCTestCase {
 
+
+    // MARK: - Properties
+
     static var allTests = [
-        ("testExample", testExample),
-        ("testPerformanceExample", testPerformanceExample)
+        ("testCompletionHandlerCallback", testCompletionHandlerCallback)
     ]
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    // MARK: - Tests
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testCompletionHandlerCallback() {
+        let fetcher = AsyncFetcher<OperationInputMock,
+                                   OperationOutputMock,
+                                   OperationMock>()
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let input = OperationInputMock()
+
+        let completionExpectation = expectation(description: "CompletionExpectation")
+
+        fetcher.fetchAsync(input) { _ in
+            completionExpectation.fulfill()
         }
+
+        #if os(Linux)
+            waitForExpectations(timeout: 5, handler: nil)
+        #else
+            let result = XCTWaiter.wait(for: [completionExpectation], timeout: 5)
+
+            if result != .completed {
+                XCTFail("Expectation not met. Result: \(result)")
+            }
+        #endif
     }
 
 }

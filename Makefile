@@ -12,7 +12,6 @@ repo_name := asyncfetcher
 # Builds a docker image with the package and starts the container
 build-docker:
 	$(DOCKER) build -t $(repo_name) .
-	$(DOCKER) run -it -d -P $(repo_name)
 .PHONY: build-docker
 
 test-docker:

@@ -105,16 +105,31 @@ public final class AsyncFetcher<Input: AsyncFetcherOperationInput,
             let operation = FetchOperation(input: input)
 
             // Set the operation's completion block to cache the fetched object and call the associated completion blocks.
-            operation.completionBlock = { [weak operation] in
-                guard let fetchedData = operation?.fetchedData else {
-                    return
-                }
-                self.cache.setObject(fetchedData, forKey: input.identifier)
+            #if os(Linux)
+                operation.completionBlock = {
+                    guard let fetchedData = operation.fetchedData else {
+                        return
+                    }
 
-                self.serialAccessQueue.addOperation {
-                    self.invokeCompletionHandlers(for: input.identifier, with: fetchedData)
+                    self.cache.setObject(fetchedData, forKey: input.identifier)
+
+                    self.serialAccessQueue.addOperation {
+                        self.invokeCompletionHandlers(for: input.identifier, with: fetchedData)
+                    }
                 }
-            }
+            #else
+                operation.completionBlock = { [weak operation] in
+                    guard let fetchedData = operation?.fetchedData else {
+                        return
+                    }
+
+                    self.cache.setObject(fetchedData, forKey: input.identifier)
+
+                    self.serialAccessQueue.addOperation {
+                        self.invokeCompletionHandlers(for: input.identifier, with: fetchedData)
+                    }
+                }
+            #endif
 
             fetchQueue.addOperation(operation)
         }
