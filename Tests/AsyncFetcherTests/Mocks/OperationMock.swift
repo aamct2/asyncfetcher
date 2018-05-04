@@ -25,10 +25,12 @@ final class OperationOutputMock {
 }
 
 
-final class OperationMock: AsyncFetcherOperation<OperationInputMock, OperationOutputMock> {
+class OperationMock: AsyncFetcherOperation<OperationInputMock, OperationOutputMock> {
 
 
     // MARK: - Properties
+
+    var delayTime: TimeInterval = 1
 
     private var _executing = false {
         willSet {
@@ -79,7 +81,7 @@ final class OperationMock: AsyncFetcherOperation<OperationInputMock, OperationOu
         _executing = true
 
         // Wait for a second to mimic a slow operation.
-        Thread.sleep(until: Date().addingTimeInterval(1))
+        Thread.sleep(until: Date().addingTimeInterval(delayTime))
 
         guard !isCancelled else {
             return
@@ -89,6 +91,16 @@ final class OperationMock: AsyncFetcherOperation<OperationInputMock, OperationOu
 
         _executing = false
         _finished = true
+    }
+
+}
+
+final class SlowOperationMock: OperationMock {
+
+    required init(input: OperationInputMock) {
+        super.init(input: input)
+
+        delayTime = 1_000
     }
 
 }

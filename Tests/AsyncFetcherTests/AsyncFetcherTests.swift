@@ -15,11 +15,38 @@ class AsyncFetcherTests: XCTestCase {
     // MARK: - Properties
 
     static var allTests = [
+        ("testCancelation", testCancelation),
         ("testCompletionHandlerCallback", testCompletionHandlerCallback)
     ]
 
 
     // MARK: - Tests
+
+    func testCancelation() {
+        // Given
+        let fetcher = AsyncFetcher<OperationInputMock,
+                                   OperationOutputMock,
+                                   SlowOperationMock>()
+
+        let input = OperationInputMock()
+
+        // When
+        let completionExpectation = expectation(description: "CompletionExpectation")
+        fetcher.fetchAsync(input) { _ in
+            XCTFail("Operation completed instead of being canceled.")
+        }
+
+        // Then
+        #if os(Linux)
+            sleep(3)
+            completionExpectation.fulfill()
+            waitForExpectations(timeout: 1, handler: nil)
+        #else
+            _ = XCTWaiter.wait(for: [completionExpectation], timeout: 3)
+        #endif
+
+        fetcher.cancelFetch(input.identifier)
+    }
 
     func testCompletionHandlerCallback() {
         // Given
