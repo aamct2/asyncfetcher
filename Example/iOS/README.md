@@ -6,7 +6,7 @@ A sample implementation of a [`AsyncFetcherOperation`][asyncfetcheroperation] ca
 
 <!-- Links -->
 
-[asyncfetcher]: ./../Sources/AsyncFetcher/AsyncFetcher.swift
-[asyncfetcheroperation]: ./../Sources/AsyncFetcher/AsyncFetcherOperation.swift
-[networkimagefetchoperation]: ./iOS%20Example/NetworkImageFetchOperation.swift
-[viewcontroller]: ./iOS%20Example/ViewController.swift
+[asyncfetcher]: ./../../Sources/AsyncFetcher/AsyncFetcher.swift
+[asyncfetcheroperation]: ./../../Sources/AsyncFetcher/AsyncFetcherOperation.swift
+[networkimagefetchoperation]: ./Sources/NetworkImageFetchOperation.swift
+[viewcontroller]: ./Sources/ViewController.swift

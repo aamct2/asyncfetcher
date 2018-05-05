@@ -40,7 +40,7 @@ pod install
 
 ## Usage
 
-* [iOS Example](./iOS%20Example)
+* [iOS Example](./Example/iOS)
 
 ## Maintainers
 
