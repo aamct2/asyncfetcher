@@ -21,7 +21,13 @@ extension OperationInputMock: Equatable {
 }
 
 final class OperationOutputMock {
+    var output = NSUUID()
+}
 
+extension OperationOutputMock: Equatable {
+    static func == (lhs: OperationOutputMock, rhs: OperationOutputMock) -> Bool {
+        return lhs.output == rhs.output
+    }
 }
 
 
